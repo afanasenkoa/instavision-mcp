@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "co.instavision/instagram-discovery",
+  "title": "InstaVision — Instagram niche discovery",
+  "description": "Find Instagram creators and leads by niche, city, follower range or lookalike accounts.",
+  "websiteUrl": "https://instavision.co/mcp?utm_source=mcp-registry&utm_medium=listing&utm_campaign=iv16",
+  "repository": {
+    "url": "https://github.com/afanasenkoa/instavision-mcp",
+    "source": "github"
+  },
+  "version": "0.2.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://instavision.co/api/mcp/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Your InstaVision API key as 'Bearer iv_sk_...'. Create one at https://instavision.co/settings/api-keys",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

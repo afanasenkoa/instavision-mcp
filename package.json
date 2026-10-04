@@ -1,0 +1,59 @@
+{
+  "name": "instavision-mcp",
+  "version": "0.2.0",
+  "description": "InstaVision — Instagram niche discovery for AI agents. MCP bridge for Claude Desktop, Claude Code, Cursor, Codex and other MCP clients.",
+  "mcpName": "co.instavision/instagram-discovery",
+  "license": "MIT",
+  "author": "InstaVision",
+  "homepage": "https://instavision.co/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afanasenkoa/instavision-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/afanasenkoa/instavision-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "instavision-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "modelcontextprotocol",
+    "instavision",
+    "instagram",
+    "discovery",
+    "creators",
+    "lead-generation",
+    "ai-agent"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --test-timeout=60000 test/*.test.mjs",
+    "validate:server-json": "node scripts/validate-server-json.mjs",
+    "prepublishOnly": "tsup"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.0"
+  }
+}
