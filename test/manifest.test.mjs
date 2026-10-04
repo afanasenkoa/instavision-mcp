@@ -39,8 +39,13 @@ describe("server.json", () => {
     assert.deepEqual(server.remotes.map((r) => [r.type, r.url]), [
       ["streamable-http", "https://instavision.co/api/mcp/mcp"],
     ]);
-    // C-25: the npm entry is added only after that version is published.
-    assert.equal(server.packages, undefined, "no packages block before npm 0.2.0 is live");
+    // C-25: the npm entry, added once 0.2.0 was live on npm (2026-10-04) —
+    // exactly one, for exactly package.json's version, run over stdio.
+    assert.deepEqual(
+      server.packages?.map((p) => [p.registryType, p.identifier, p.version, p.transport?.type]),
+      [["npm", "instavision-mcp", pkg.version, "stdio"]],
+    );
+    assert.equal(server.version, "0.2.1", "registry versions are immutable: 0.2.0 went out remote-only");
     assert.ok(server.title.startsWith("InstaVision — "), `title must be qualified (C-30): ${server.title}`);
   });
 

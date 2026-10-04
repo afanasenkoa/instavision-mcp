@@ -8,7 +8,7 @@
     "url": "https://github.com/afanasenkoa/instavision-mcp",
     "source": "github"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "remotes": [
     {
       "type": "streamable-http",
@@ -17,6 +17,24 @@
         {
           "name": "Authorization",
           "description": "Your InstaVision API key as 'Bearer iv_sk_...'. Create one at https://instavision.co/settings/api-keys",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "instavision-mcp",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "INSTAVISION_API_KEY",
+          "description": "Your InstaVision API key (iv_sk_...). Create one at https://instavision.co/settings/api-keys",
           "isRequired": true,
           "isSecret": true
         }
